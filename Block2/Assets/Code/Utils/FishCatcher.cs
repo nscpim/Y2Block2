@@ -5,6 +5,8 @@ using UnityEngine;
 public class FishCatcher : MonoBehaviour
 {
     public Timer fishTimer = new Timer();
+    public Timer fishCatch = new Timer();
+    public float timeToCatchFish;
     public float randomIntervalMin;
     public float randomIntervalMax;
     private bool canReset = false;
@@ -21,10 +23,12 @@ public class FishCatcher : MonoBehaviour
         if (fishTimer.isActive && fishTimer.TimerDone())
         {
             fishTimer.StopTimer();
+            fishCatch.SetTimer(timeToCatchFish);
+        }
 
-            
-
-
+        if (fishCatch.isActive && fishCatch.TimerDone())
+        {
+            fishCatch.StopTimer();
         }
     }
     private void OnCollisionEnter(Collision collision)
