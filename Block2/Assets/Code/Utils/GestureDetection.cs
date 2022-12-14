@@ -26,14 +26,14 @@ public class GestureDetection : MonoBehaviour
     private Gesture previousGesture;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         fingerBones = new List<OVRBone>(skeleton.Bones);
         previousGesture = new Gesture();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -44,7 +44,9 @@ public class GestureDetection : MonoBehaviour
         bool hasRecognized = !currentGesture.Equals(new Gesture());
         if (hasRecognized && !currentGesture.Equals(previousGesture))
         {
+            GameManager.instance.SetCurrentGesture(currentGesture);
             previousGesture = currentGesture;
+
             currentGesture.onRecognized.Invoke();
 
         }

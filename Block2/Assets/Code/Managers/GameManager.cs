@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static Manager[] managers;
+    public Gesture gestureDone;
 
     public static GameManager instance { get; private set; }
     public static T GetManager<T>() where T : Manager
@@ -52,5 +53,15 @@ public class GameManager : MonoBehaviour
         {
             managers[i].Update();
         }
+    }
+
+    public void SetCurrentGesture(Gesture gesture)
+    {
+        gestureDone = gesture;
+    }
+
+    public Gesture GetGestureDone() 
+    {
+        return gestureDone;
     }
 }
