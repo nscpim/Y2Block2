@@ -9,7 +9,10 @@ public class FishCatcher : MonoBehaviour
     public float timeToCatchFish;
     public float randomIntervalMin;
     public float randomIntervalMax;
-    private bool canReset = false;
+    public Gesture currentRandomGesture;
+    public bool canCatch;
+    public GestureDetection gestureDetection;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -35,16 +38,15 @@ public class FishCatcher : MonoBehaviour
     {
         if (collision.transform.tag == "Water")
         {
-            canReset = true;
+            canCatch = true;
         }
     }
     private void OnCollisionStay(Collision collision)
     {
         if (collision.transform.tag == "Water")
         {
-            if (canReset)
+            if (canCatch)
             {
-                canReset = false;
                 float randomValue = Random.Range(randomIntervalMin, randomIntervalMax);
                 fishTimer.SetTimer(randomValue);
             }
@@ -55,8 +57,16 @@ public class FishCatcher : MonoBehaviour
     {
         if (collision.transform.tag == "Water")
         {
-            canReset = false; 
+            canCatch = false; 
         }
     }
+
+    public void CheckForSameGesture(Gesture gesture) 
+    {
+
+        
+
+    }
+
 
 }

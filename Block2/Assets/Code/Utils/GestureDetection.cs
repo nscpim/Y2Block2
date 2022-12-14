@@ -6,18 +6,25 @@ using UnityEngine.Events;
 [System.Serializable]
 public struct Gesture
 {
+
     public string name;
     public List<Vector3> fingerDatas;
     public UnityEvent onRecognized;
+    public float leftHandPinchStrength;
+    public float rightHandPinchStrength;
+
 }
 
 public class GestureDetection : MonoBehaviour
 {
+    public List<float> pinchStrengthsLeft = new List<float>();
+    public List<float> pinchStrengthsRight = new List<float>();
     public float threshold = 0.1f;
     public OVRSkeleton skeleton;
     public List<Gesture> gestures;
     public List<OVRBone> fingerBones;
     private Gesture previousGesture;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +46,9 @@ public class GestureDetection : MonoBehaviour
         {
             previousGesture = currentGesture;
             currentGesture.onRecognized.Invoke();
+
         }
     }
-
     public void SaveData()
     {
         Gesture g = new Gesture();
@@ -51,15 +58,27 @@ public class GestureDetection : MonoBehaviour
         {
             data.Add(skeleton.transform.InverseTransformPoint(bone.Transform.position));
         }
+
         g.fingerDatas = data;
         gestures.Add(g);
+    }
+
+    public Gesture GetRandomGesture()
+    {
+        Gesture[] gestureArray = gestures.ToArray();
+        int randomGesture = Random.Range(0, gestureArray.Length);
+        return gestureArray[randomGesture];
     }
 
     Gesture Recognize()
     {
         Gesture currentGesture = new Gesture();
         float currentMin = Mathf.Infinity;
+        currentGesture.leftHandPinchStrength = skeleton.GetComponent<OVRHand>().GetFingerPinchStrength(OVRHand.HandFinger.Index);
+        currentGesture.rightHandPinchStrength = skeleton.GetComponent<OVRHand>().GetFingerPinchStrength(OVRHand.HandFinger.Index);
 
+        pinchStrengthsLeft.Add(currentGesture.leftHandPinchStrength);
+        pinchStrengthsRight.Add(currentGesture.rightHandPinchStrength);
         foreach (var gesture in gestures)
         {
             float sumDistance = 0;

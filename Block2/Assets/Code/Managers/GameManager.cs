@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
     private static Manager[] managers;
 
     public static GameManager instance { get; private set; }
-
-
     public static T GetManager<T>() where T : Manager
     {
         for (int i = 0; i < managers.Length; i++)
