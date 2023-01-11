@@ -2,6 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.IO;
+
+
+[System.Serializable]
+public struct Data
+{
+    public string name;
+    // public float x;
+    // public float y;
+    // public float z;
+}
 
 [System.Serializable]
 public struct Gesture
@@ -17,6 +28,7 @@ public struct Gesture
 
 public class GestureDetection : MonoBehaviour
 {
+
     public List<float> pinchStrengthsLeft = new List<float>();
     public List<float> pinchStrengthsRight = new List<float>();
     public float threshold = 0.1f;
@@ -45,7 +57,7 @@ public class GestureDetection : MonoBehaviour
         bool hasRecognized = !currentGesture.Equals(new Gesture());
         if (hasRecognized && !currentGesture.Equals(previousGesture))
         {
-            
+
             GameManager.instance.SetCurrentGesture(currentGesture);
             previousGesture = currentGesture;
 
@@ -62,9 +74,15 @@ public class GestureDetection : MonoBehaviour
         {
             data.Add(skeleton.transform.InverseTransformPoint(bone.Transform.position));
         }
-
         g.fingerDatas = data;
+
+
+
         gestures.Add(g);
+
+
+
+
     }
 
     public Gesture GetRandomGesture()
@@ -78,11 +96,11 @@ public class GestureDetection : MonoBehaviour
     {
         Gesture currentGesture = new Gesture();
         float currentMin = Mathf.Infinity;
-       /* currentGesture.leftHandPinchStrength = skeleton.GetComponent<OVRHand>().GetFingerPinchStrength(OVRHand.HandFinger.Index);
-        currentGesture.rightHandPinchStrength = skeleton.GetComponent<OVRHand>().GetFingerPinchStrength(OVRHand.HandFinger.Index);
+        /* currentGesture.leftHandPinchStrength = skeleton.GetComponent<OVRHand>().GetFingerPinchStrength(OVRHand.HandFinger.Index);
+         currentGesture.rightHandPinchStrength = skeleton.GetComponent<OVRHand>().GetFingerPinchStrength(OVRHand.HandFinger.Index);
 
-        pinchStrengthsLeft.Add(currentGesture.leftHandPinchStrength);
-        pinchStrengthsRight.Add(currentGesture.rightHandPinchStrength);*/
+         pinchStrengthsLeft.Add(currentGesture.leftHandPinchStrength);
+         pinchStrengthsRight.Add(currentGesture.rightHandPinchStrength);*/
         foreach (var gesture in gestures)
         {
             float sumDistance = 0;
@@ -104,9 +122,22 @@ public class GestureDetection : MonoBehaviour
             {
                 currentMin = sumDistance;
                 currentGesture = gesture;
+                SaveJSONData(currentGesture);
+
             }
         }
         return currentGesture;
     }
+
+    public void SaveJSONData(Gesture gesture)
+    {
+        Data data = new Data();
+        data.name = gesture.name;
+
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(Application.dataPath + "/DoctorsOnly.json", json);
+    }
+
+
 
 }

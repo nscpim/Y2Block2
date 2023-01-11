@@ -15,7 +15,11 @@ public class Fish : MonoBehaviour
     public void Start()
     {
         gestureDetection = GameManager.instance.gameObject.GetComponent<GestureDetection>();
-        randomGesture = gestureDetection.gestures[Random.Range(0, gestureDetection.gestures.Count)];
+        if (gestureDetection.gestures.Count >= 1)
+        {
+            randomGesture = gestureDetection.gestures[Random.Range(0, gestureDetection.gestures.Count)];
+        }
+     
     }
 
     // Update is called once per frame
