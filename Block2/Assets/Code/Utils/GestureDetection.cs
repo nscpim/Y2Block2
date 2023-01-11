@@ -40,10 +40,12 @@ public class GestureDetection : MonoBehaviour
             SaveData();
         }
 
+
         Gesture currentGesture = Recognize();
         bool hasRecognized = !currentGesture.Equals(new Gesture());
         if (hasRecognized && !currentGesture.Equals(previousGesture))
         {
+            
             GameManager.instance.SetCurrentGesture(currentGesture);
             previousGesture = currentGesture;
 
@@ -76,11 +78,11 @@ public class GestureDetection : MonoBehaviour
     {
         Gesture currentGesture = new Gesture();
         float currentMin = Mathf.Infinity;
-        currentGesture.leftHandPinchStrength = skeleton.GetComponent<OVRHand>().GetFingerPinchStrength(OVRHand.HandFinger.Index);
+       /* currentGesture.leftHandPinchStrength = skeleton.GetComponent<OVRHand>().GetFingerPinchStrength(OVRHand.HandFinger.Index);
         currentGesture.rightHandPinchStrength = skeleton.GetComponent<OVRHand>().GetFingerPinchStrength(OVRHand.HandFinger.Index);
 
         pinchStrengthsLeft.Add(currentGesture.leftHandPinchStrength);
-        pinchStrengthsRight.Add(currentGesture.rightHandPinchStrength);
+        pinchStrengthsRight.Add(currentGesture.rightHandPinchStrength);*/
         foreach (var gesture in gestures)
         {
             float sumDistance = 0;

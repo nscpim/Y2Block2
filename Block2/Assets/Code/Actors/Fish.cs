@@ -8,7 +8,6 @@ public class Fish : MonoBehaviour
     public bool isMoving = false;
     public float speed = 5f;
 
-
     private Transform newTarget;
     private GestureDetection gestureDetection;
     private Gesture randomGesture;
@@ -17,11 +16,25 @@ public class Fish : MonoBehaviour
     {
         gestureDetection = GameManager.instance.gameObject.GetComponent<GestureDetection>();
         randomGesture = gestureDetection.gestures[Random.Range(0, gestureDetection.gestures.Count)];
-       
     }
 
     // Update is called once per frame
     void Update()
+    {
+        Move();
+    }
+
+
+    public void CatchFish()
+    {
+        if (GameManager.instance.GetGestureDone().name == randomGesture.name)
+        {
+            randomGesture = gestureDetection.gestures[Random.Range(0, gestureDetection.gestures.Count)];
+            //Update which gesture the user must do
+            Debug.Log("Caught Fish");
+        }
+    }
+    public void Move()
     {
         if (!isMoving)
         {
@@ -34,17 +47,6 @@ public class Fish : MonoBehaviour
         if (transform.position == newTarget.position)
         {
             isMoving = false;
-        }
-    }
-
-   
-    public void CatchFish() 
-    {
-        if (GameManager.instance.GetGestureDone().name == randomGesture.name)
-        {
-            randomGesture = gestureDetection.gestures[Random.Range(0, gestureDetection.gestures.Count)];
-            //Update which gesture the user must do
-            Debug.Log("Caught Fish");
         }
     }
 }

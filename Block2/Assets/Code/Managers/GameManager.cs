@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     private static Manager[] managers;
     public Gesture gestureDone;
+
+    public Image[] gestureImages;
+    public Canvas gestureUI;
+    public TextMeshProUGUI gestureText;
+    public Image gestureImage;
+    
 
     public static GameManager instance { get; private set; }
     public static T GetManager<T>() where T : Manager
@@ -64,4 +72,7 @@ public class GameManager : MonoBehaviour
     {
         return gestureDone;
     }
+
+
+   
 }
