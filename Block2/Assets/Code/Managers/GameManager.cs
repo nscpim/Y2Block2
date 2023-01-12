@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+    public TextMeshProUGUI fishCaughtText;
+
     private static Manager[] managers;
     public Gesture gestureDone;
 

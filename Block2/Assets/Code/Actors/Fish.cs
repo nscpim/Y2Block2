@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Fish : MonoBehaviour
 {
     public Transform[] targets;
     public bool isMoving = false;
     public float speed = 5f;
+
+   
+    private int fishCaught = 0;
+
 
     private Transform newTarget;
     private GestureDetection gestureDetection;
@@ -52,5 +58,15 @@ public class Fish : MonoBehaviour
         {
             isMoving = false;
         }
+
+
     }
+
+    public void AddCount(int amount) 
+    {
+        fishCaught += amount;
+        GameManager.instance.fishCaughtText.text = "Vis gevangen: " + fishCaught.ToString(); 
+    }
+
+
 }

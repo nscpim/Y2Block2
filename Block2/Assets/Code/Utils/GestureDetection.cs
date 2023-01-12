@@ -34,12 +34,13 @@ public class GestureDetection : MonoBehaviour
     public float threshold = 0.1f;
     public OVRSkeleton skeleton;
     public List<Gesture> gestures;
-    public List<OVRBone> fingerBones;
+    private List<OVRBone> fingerBones;
     private Gesture previousGesture;
 
     // Start is called before the first frame update
     public void Start()
     {
+       
         fingerBones = new List<OVRBone>(skeleton.Bones);
         previousGesture = new Gesture();
     }
@@ -51,6 +52,7 @@ public class GestureDetection : MonoBehaviour
         {
             SaveData();
         }
+
 
 
         Gesture currentGesture = Recognize();
@@ -75,14 +77,7 @@ public class GestureDetection : MonoBehaviour
             data.Add(skeleton.transform.InverseTransformPoint(bone.Transform.position));
         }
         g.fingerDatas = data;
-
-
-
         gestures.Add(g);
-
-
-
-
     }
 
     public Gesture GetRandomGesture()
@@ -133,7 +128,7 @@ public class GestureDetection : MonoBehaviour
     {
         Data data = new Data();
         data.name = gesture.name;
-
+    
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(Application.dataPath + "/DoctorsOnly.json", json);
     }
