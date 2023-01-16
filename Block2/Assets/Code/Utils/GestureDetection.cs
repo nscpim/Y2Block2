@@ -9,6 +9,9 @@ using System.IO;
 public struct Data
 {
     public string name;
+    public string description;
+    public string hasDone;
+    public int count;
     // public float x;
     // public float y;
     // public float z;
@@ -53,6 +56,7 @@ public class GestureDetection : MonoBehaviour
             SaveData();
         }
 
+        
 
 
         Gesture currentGesture = Recognize();

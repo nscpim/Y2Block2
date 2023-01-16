@@ -11,7 +11,7 @@ public class Fish : MonoBehaviour
     public float speed = 5f;
 
    
-    private int fishCaught = 0;
+  
 
 
     private Transform newTarget;
@@ -21,10 +21,7 @@ public class Fish : MonoBehaviour
     public void Start()
     {
         gestureDetection = GameManager.instance.gameObject.GetComponent<GestureDetection>();
-        if (gestureDetection.gestures.Count >= 1)
-        {
-            randomGesture = gestureDetection.gestures[Random.Range(0, gestureDetection.gestures.Count)];
-        }
+      
      
     }
 
@@ -62,11 +59,7 @@ public class Fish : MonoBehaviour
 
     }
 
-    public void AddCount(int amount) 
-    {
-        fishCaught += amount;
-        GameManager.instance.fishCaughtText.text = "Vis gevangen: " + fishCaught.ToString(); 
-    }
+   
 
 
 }
