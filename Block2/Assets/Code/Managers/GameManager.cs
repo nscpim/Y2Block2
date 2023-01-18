@@ -10,11 +10,12 @@ using Oculus.Interaction.PoseDetection;
 
 public class GameManager : MonoBehaviour
 {
-
-
-
+    public OVRSkeleton skeleton;
+    public List<OVRBone> bones;
+    public float strengthNumber;
+    public Animator fishAnimator;
     public TextMeshProUGUI fishCaughtText;
-    private int timesCompleted;
+    public int[] timesCompleted;
     private static Manager[] managers;
     public Gesture gestureDone;
     public Sprite[] gestureImages;
@@ -60,8 +61,9 @@ public class GameManager : MonoBehaviour
         {
             managers[i].Start();
         }
-
+        bones = new List<OVRBone>(skeleton.Bones);
         RandomizeGesture();
+
     }
 
     // Update is called once per frame
@@ -90,31 +92,44 @@ public class GameManager : MonoBehaviour
     {
         if (gestureInt == gesture)
         {
-            timesCompleted++;
+            timesCompleted[gestureInt]++;
             SaveJSONData((GestureEnum)gestureInt);
         }
 
     }
 
+    public void GatherObject(ShapeRecognizerActiveState shapeObject)
+    {
+        var hand = shapeObject.Hand;
+        strengthNumber = hand.GetFingerPinchStrength(Oculus.Interaction.Input.HandFinger.Index);
+    }
+
+
     public void SaveJSONData(GestureEnum gesture)
     {
         Data data = new Data();
         data.name = gesture.ToString();
-        data.count = timesCompleted;
+        data.count = timesCompleted[(int)gesture];
         data.description = string.Format("This is the {0} gesture and has been completed {1} time(s)!", gesture.ToString(), data.count);
+        data.strength = strengthNumber;
+        data.bones = new List<Vector3>();
+        foreach (var bone in bones)
+        {
+            data.bones.Add(skeleton.transform.InverseTransformPoint(bone.Transform.position));
+        }
         data.hasDone = "true";
         string json = JsonUtility.ToJson(data, true);
         File.AppendAllText(Application.dataPath + "/Tasks.json", json);
         AddCount(1);
+        fishAnimator.Play("play");
         RandomizeGesture();
     }
 
     public void AddCount(int amount)
     {
         fishCaught += amount;
-        GameManager.instance.fishCaughtText.text = "Vis gevangen: " + fishCaught.ToString();
+        fishCaughtText.text = "Vis gevangen: " + fishCaught.ToString();
     }
-
 
     public void SetCurrentGesture(Gesture gesture)
     {
@@ -125,7 +140,4 @@ public class GameManager : MonoBehaviour
     {
         return gestureDone;
     }
-
-
-
 }

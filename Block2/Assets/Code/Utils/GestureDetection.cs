@@ -12,9 +12,8 @@ public struct Data
     public string description;
     public string hasDone;
     public int count;
-    // public float x;
-    // public float y;
-    // public float z;
+    public float strength;
+    public List<Vector3> bones;
 }
 
 [System.Serializable]
