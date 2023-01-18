@@ -7,29 +7,20 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CartoonWater
-  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_Name: water
+  m_Shader: {fileID: -6465566751694194690, guid: ca56065103c7b5843993ebc8af57606e,
+    type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _EMISSION
+  m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BaseMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -44,28 +35,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 0
-    - _Blend: 0
-    - _BlendOp: 0
-    - _Cull: 2
-    - _Cutoff: 0.5
-    - _DstBlend: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RippleDensity: 7.01
+    - _RippleDensity: 7
     - _RippleSlimness: 5
-    - _RippleSpeed: 0.1
-    - _SampleGI: 0
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _WaveSpeed: 0.36
-    - _ZWrite: 1
+    - _RippleSpeed: 1
+    - _WaveSpeed: 0.1
     m_Colors:
-    - _BaseColor: {r: 0.09811318, g: 0.5512374, b: 1, a: 0}
-    - _Color: {r: 0.09811316, g: 0.55123734, b: 1, a: 0}
-    - _RippleColor: {r: 0.641812, g: 0.8351476, b: 0.9528302, a: 0}
+    - _BaseColor: {r: 0, g: 0.48263836, b: 1, a: 0}
+    - _RippleColor: {r: 0.2490566, g: 0.7157447, b: 1, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &6534570141251586993
+--- !u!114 &8092127300960474399
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
