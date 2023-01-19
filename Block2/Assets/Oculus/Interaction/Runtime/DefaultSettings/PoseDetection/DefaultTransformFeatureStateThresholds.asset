@@ -76,4 +76,4 @@ MonoBehaviour:
       _firstState: 24
       _secondState: 26
     _minTimeInState: 0
-  _minTimeInState: 0.5
+  _minTimeInState: 0.22

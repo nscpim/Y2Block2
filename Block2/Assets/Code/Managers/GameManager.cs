@@ -10,9 +10,6 @@ using Oculus.Interaction.PoseDetection;
 
 public class GameManager : MonoBehaviour
 {
-    public OVRSkeleton skeleton;
-    public List<OVRBone> bones;
-    public float strengthNumber;
     public Animator fishAnimator;
     public TextMeshProUGUI fishCaughtText;
     public int[] timesCompleted;
@@ -24,6 +21,13 @@ public class GameManager : MonoBehaviour
     public Image gestureImage;
     public int gesture;
     private int fishCaught = 0;
+    public GameObject[] leftHandPoses;
+    public GameObject[] rightHandPoses;
+    public GameObject handCheckPanel;
+    public OVRHand[] hands;
+   
+
+
     public static GameManager instance { get; private set; }
     public static T GetManager<T>() where T : Manager
     {
@@ -61,7 +65,6 @@ public class GameManager : MonoBehaviour
         {
             managers[i].Start();
         }
-        bones = new List<OVRBone>(skeleton.Bones);
         RandomizeGesture();
 
     }
@@ -74,17 +77,28 @@ public class GameManager : MonoBehaviour
             managers[i].Update();
         }
     }
+    /// <summary>
+    ///  Enum of all the gestures, being used for randomizing and showing the certain gestures. NOTE: Do not Touch.
+    /// </summary>
     public enum GestureEnum
     {
-        HoekVuist,
+        HoekVuist_Neutral,
+        HoekVuist_Closed,
         HaakVuist,
-        WristFlexion
+        Opposition_Index,
+        Opposition_Middle,
+        Opposition_Ring,
+        Opposition_Pinky,
+        PaperPose,
+        Thumb_Extension
     }
 
     public void RandomizeGesture()
     {
         gesture = UnityEngine.Random.Range(0, Enum.GetNames(typeof(GestureEnum)).Length);
         gestureImage.sprite = gestureImages[gesture];
+        GestureEnum enumValue = (GestureEnum)gesture;
+        gestureText.text = enumValue.ToString();
     }
 
 
@@ -95,33 +109,22 @@ public class GameManager : MonoBehaviour
             timesCompleted[gestureInt]++;
             SaveJSONData((GestureEnum)gestureInt);
         }
-
+        fishAnimator.Play("play");
     }
-
-    public void GatherObject(ShapeRecognizerActiveState shapeObject)
-    {
-        var hand = shapeObject.Hand;
-        strengthNumber = hand.GetFingerPinchStrength(Oculus.Interaction.Input.HandFinger.Index);
-    }
-
-
+    
     public void SaveJSONData(GestureEnum gesture)
     {
         Data data = new Data();
         data.name = gesture.ToString();
         data.count = timesCompleted[(int)gesture];
         data.description = string.Format("This is the {0} gesture and has been completed {1} time(s)!", gesture.ToString(), data.count);
-        data.strength = strengthNumber;
-        data.bones = new List<Vector3>();
-        foreach (var bone in bones)
-        {
-            data.bones.Add(skeleton.transform.InverseTransformPoint(bone.Transform.position));
-        }
         data.hasDone = "true";
+        data.leftHandRotation = hands[0].transform.rotation;
+        data.rightHandRotation = hands[1].transform.rotation;
         string json = JsonUtility.ToJson(data, true);
         File.AppendAllText(Application.dataPath + "/Tasks.json", json);
         AddCount(1);
-        fishAnimator.Play("play");
+       
         RandomizeGesture();
     }
 
@@ -139,5 +142,26 @@ public class GameManager : MonoBehaviour
     public Gesture GetGestureDone()
     {
         return gestureDone;
+    }
+
+    public void LeftHandSelect(bool isLeft)
+    {
+        if (isLeft)
+        {
+            for (int i = 0; i < leftHandPoses.Length; i++)
+            {
+                leftHandPoses[i].SetActive(true);
+            }
+            Debug.Log("Chose Left as hand.");
+        }
+        else
+        {
+            for (int i = 0; i < rightHandPoses.Length; i++)
+            {
+                rightHandPoses[i].SetActive(true);
+            }
+            Debug.Log("Chose right as hand.");
+        }
+        handCheckPanel.SetActive(false);
     }
 }

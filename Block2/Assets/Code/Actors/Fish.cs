@@ -10,10 +10,6 @@ public class Fish : MonoBehaviour
     public bool isMoving = false;
     public float speed = 5f;
 
-   
-  
-
-
     private Transform newTarget;
     private GestureDetection gestureDetection;
     private Gesture randomGesture;
@@ -21,7 +17,6 @@ public class Fish : MonoBehaviour
     public void Start()
     {
         gestureDetection = GameManager.instance.gameObject.GetComponent<GestureDetection>();
-      
      
     }
 

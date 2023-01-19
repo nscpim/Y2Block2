@@ -12,8 +12,8 @@ public struct Data
     public string description;
     public string hasDone;
     public int count;
-    public float strength;
-    public List<Vector3> bones;
+    public Quaternion leftHandRotation;
+    public Quaternion rightHandRotation;    
 }
 
 [System.Serializable]
