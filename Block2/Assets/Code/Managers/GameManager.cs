@@ -11,7 +11,7 @@ using Oculus.Interaction.PoseDetection;
 public class GameManager : MonoBehaviour
 {
     public Animator fishAnimator;
-    public TextMeshProUGUI fishCaughtText;
+    public TextMeshProUGUI fishCaughtText, didCaughtText;
     public int[] timesCompleted;
     private static Manager[] managers;
     public Gesture gestureDone;
@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] rightHandPoses;
     public GameObject handCheckPanel;
     public OVRHand[] hands;
+    public GameObject[] handSelect;
+    public GameObject bait;
    
 
 
@@ -106,10 +108,19 @@ public class GameManager : MonoBehaviour
     {
         if (gestureInt == gesture)
         {
-            timesCompleted[gestureInt]++;
-            SaveJSONData((GestureEnum)gestureInt);
+            Bait baitScript = bait.GetComponent<Bait>();
+            if (baitScript.canCatch)
+            {
+                didCaughtText.text = "You caught a fish!";
+                timesCompleted[gestureInt]++;
+                SaveJSONData((GestureEnum)gestureInt);
+                fishAnimator.Play("play");
+            }
+            else
+            {
+                didCaughtText.text = "Miss, you nearly caught a fish!";
+            }
         }
-        fishAnimator.Play("play");
     }
     
     public void SaveJSONData(GestureEnum gesture)
@@ -163,5 +174,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("Chose right as hand.");
         }
         handCheckPanel.SetActive(false);
+        for (int i = 0; i < handSelect.Length; i++)
+        {
+            handSelect[i].SetActive(false);
+        }
     }
 }

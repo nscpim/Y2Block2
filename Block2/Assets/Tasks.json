@@ -1,71 +1,800 @@
 {
-    "name": "HaakVuist",
-    "description": "This is the HaakVuist gesture and has been completed 1 time(s)!",
+    "name": "HoekVuist_Neutral",
+    "description": "This is the HoekVuist_Neutral gesture and has been completed 1 time(s)!",
     "hasDone": "true",
     "count": 1,
-    "strength": 0.0,
-    "bones": []
-}{
-    "name": "HoekVuist",
-    "description": "This is the HoekVuist gesture and has been completed 1 time(s)!",
-    "hasDone": "true",
-    "count": 1,
-    "strength": 0.0,
-    "bones": []
-}{
-    "name": "WristFlexion",
-    "description": "This is the WristFlexion gesture and has been completed 1 time(s)!",
-    "hasDone": "true",
-    "count": 1,
-    "strength": 0.0,
-    "bones": []
-}{
-    "name": "HoekVuist",
-    "description": "This is the HoekVuist gesture and has been completed 1 time(s)!",
-    "hasDone": "true",
-    "count": 1,
-    "strength": 0.0,
-    "bones": []
+    "leftHandRotation": {
+        "x": -0.2541395425796509,
+        "y": -0.6411461234092712,
+        "z": -0.3507493734359741,
+        "w": 0.633497953414917
+    },
+    "rightHandRotation": {
+        "x": 0.5915699005126953,
+        "y": 0.3823510408401489,
+        "z": -0.647770881652832,
+        "w": 0.2902510464191437
+    }
 }{
     "name": "HaakVuist",
     "description": "This is the HaakVuist gesture and has been completed 1 time(s)!",
     "hasDone": "true",
     "count": 1,
-    "strength": 0.0,
-    "bones": []
+    "leftHandRotation": {
+        "x": -0.4959377348423004,
+        "y": -0.43506360054016116,
+        "z": -0.3660723567008972,
+        "w": 0.6563203930854797
+    },
+    "rightHandRotation": {
+        "x": 0.390153706073761,
+        "y": 0.42060163617134097,
+        "z": -0.6024611592292786,
+        "w": 0.5549008846282959
+    }
 }{
-    "name": "WristFlexion",
-    "description": "This is the WristFlexion gesture and has been completed 1 time(s)!",
+    "name": "Opposition_Middle",
+    "description": "This is the Opposition_Middle gesture and has been completed 1 time(s)!",
     "hasDone": "true",
     "count": 1,
-    "strength": 0.0,
-    "bones": []
+    "leftHandRotation": {
+        "x": -0.14633311331272126,
+        "y": -0.5559893250465393,
+        "z": -0.44911763072013857,
+        "w": 0.6839268803596497
+    },
+    "rightHandRotation": {
+        "x": 0.6007739901542664,
+        "y": 0.40107786655426028,
+        "z": -0.46426039934158327,
+        "w": 0.5125129222869873
+    }
 }{
-    "name": "WristFlexion",
-    "description": "This is the WristFlexion gesture and has been completed 2 time(s)!",
+    "name": "Opposition_Pinky",
+    "description": "This is the Opposition_Pinky gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.14633311331272126,
+        "y": -0.5559893250465393,
+        "z": -0.44911763072013857,
+        "w": 0.6839268803596497
+    },
+    "rightHandRotation": {
+        "x": 0.6007739901542664,
+        "y": 0.40107786655426028,
+        "z": -0.46426039934158327,
+        "w": 0.5125129222869873
+    }
+}{
+    "name": "Opposition_Ring",
+    "description": "This is the Opposition_Ring gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.2596437335014343,
+        "y": -0.49580931663513186,
+        "z": -0.4294861853122711,
+        "w": 0.7087311148643494
+    },
+    "rightHandRotation": {
+        "x": 0.5003442168235779,
+        "y": 0.3568349778652191,
+        "z": -0.5392499566078186,
+        "w": 0.5757898092269898
+    }
+}{
+    "name": "HoekVuist_Closed",
+    "description": "This is the HoekVuist_Closed gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.4888227581977844,
+        "y": 0.3072623014450073,
+        "z": -0.6183678507804871,
+        "w": 0.5331635475158691
+    }
+}{
+    "name": "Opposition_Pinky",
+    "description": "This is the Opposition_Pinky gesture and has been completed 2 time(s)!",
     "hasDone": "true",
     "count": 2,
-    "strength": 0.0,
-    "bones": []
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.4915917217731476,
+        "y": 0.3523561656475067,
+        "z": -0.47024449706077578,
+        "w": 0.6426919102668762
+    }
 }{
-    "name": "HaakVuist",
-    "description": "This is the HaakVuist gesture and has been completed 2 time(s)!",
+    "name": "Thumb_Extension",
+    "description": "This is the Thumb_Extension gesture and has been completed 1 time(s)!",
     "hasDone": "true",
-    "count": 2,
-    "strength": 0.0,
-    "bones": []
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.4762565493583679,
+        "y": 0.3245466351509094,
+        "z": -0.5133051872253418,
+        "w": 0.6358985900878906
+    }
 }{
-    "name": "WristFlexion",
-    "description": "This is the WristFlexion gesture and has been completed 3 time(s)!",
+    "name": "Opposition_Index",
+    "description": "This is the Opposition_Index gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.5063199400901794,
+        "y": 0.3716963529586792,
+        "z": -0.5079537034034729,
+        "w": 0.5894615650177002
+    }
+}{
+    "name": "Opposition_Pinky",
+    "description": "This is the Opposition_Pinky gesture and has been completed 3 time(s)!",
     "hasDone": "true",
     "count": 3,
-    "strength": 0.0,
-    "bones": []
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.5063199400901794,
+        "y": 0.3716963529586792,
+        "z": -0.5079537034034729,
+        "w": 0.5894615650177002
+    }
 }{
-    "name": "WristFlexion",
-    "description": "This is the WristFlexion gesture and has been completed 1 time(s)!",
+    "name": "Thumb_Extension",
+    "description": "This is the Thumb_Extension gesture and has been completed 2 time(s)!",
+    "hasDone": "true",
+    "count": 2,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.47395074367523196,
+        "y": 0.38206160068511965,
+        "z": -0.5556837320327759,
+        "w": 0.5662289261817932
+    }
+}{
+    "name": "Opposition_Index",
+    "description": "This is the Opposition_Index gesture and has been completed 2 time(s)!",
+    "hasDone": "true",
+    "count": 2,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.42682957649230959,
+        "y": 0.4889582097530365,
+        "z": -0.3937973380088806,
+        "w": 0.6508917212486267
+    }
+}{
+    "name": "Thumb_Extension",
+    "description": "This is the Thumb_Extension gesture and has been completed 3 time(s)!",
+    "hasDone": "true",
+    "count": 3,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.3587437570095062,
+        "y": 0.3964926600456238,
+        "z": -0.5539875626564026,
+        "w": 0.6381178498268127
+    }
+}{
+    "name": "Opposition_Pinky",
+    "description": "This is the Opposition_Pinky gesture and has been completed 4 time(s)!",
+    "hasDone": "true",
+    "count": 4,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.3699966073036194,
+        "y": 0.5643667578697205,
+        "z": -0.35806894302368166,
+        "w": 0.6452745795249939
+    }
+}{
+    "name": "HaakVuist",
+    "description": "This is the HaakVuist gesture and has been completed 1 time(s)!",
     "hasDone": "true",
     "count": 1,
-    "strength": 0.0,
-    "bones": []
+    "leftHandRotation": {
+        "x": -0.47717687487602236,
+        "y": -0.6411700248718262,
+        "z": -0.447178453207016,
+        "w": 0.4015403985977173
+    },
+    "rightHandRotation": {
+        "x": 0.39038360118865969,
+        "y": 0.43404605984687807,
+        "z": -0.597899854183197,
+        "w": 0.5492908954620361
+    }
+}{
+    "name": "HoekVuist_Closed",
+    "description": "This is the HoekVuist_Closed gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.6974553465843201,
+        "y": -0.2981271743774414,
+        "z": -0.5627756714820862,
+        "w": 0.3285723328590393
+    },
+    "rightHandRotation": {
+        "x": 0.4151620864868164,
+        "y": 0.3990292549133301,
+        "z": -0.6899818181991577,
+        "w": 0.43856728076934817
+    }
+}{
+    "name": "PaperPose",
+    "description": "This is the PaperPose gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.6929879188537598,
+        "y": -0.2825322151184082,
+        "z": -0.5697282552719116,
+        "w": 0.33963674306869509
+    },
+    "rightHandRotation": {
+        "x": 0.4185776114463806,
+        "y": 0.329527884721756,
+        "z": -0.6777456402778626,
+        "w": 0.5068185925483704
+    }
+}{
+    "name": "PaperPose",
+    "description": "This is the PaperPose gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.23417112231254579,
+        "y": 0.47941088676452639,
+        "z": -0.5102942585945129,
+        "w": 0.674484133720398
+    }
+}{
+    "name": "Thumb_Extension",
+    "description": "This is the Thumb_Extension gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.37830913066864016,
+        "y": 0.36363038420677187,
+        "z": -0.6591299772262573,
+        "w": 0.5387048125267029
+    }
+}{
+    "name": "HoekVuist_Neutral",
+    "description": "This is the HoekVuist_Neutral gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.4236866533756256,
+        "y": 0.28435567021369936,
+        "z": -0.6297079920768738,
+        "w": 0.5857468843460083
+    }
+}{
+    "name": "PaperPose",
+    "description": "This is the PaperPose gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.4865582287311554,
+        "y": 0.2851790487766266,
+        "z": -0.5938338041305542,
+        "w": 0.5738427639007568
+    }
+}{
+    "name": "Opposition_Index",
+    "description": "This is the Opposition_Index gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.4613948166370392,
+        "y": 0.2568489909172058,
+        "z": -0.6149467825889587,
+        "w": 0.5856482982635498
+    }
+}{
+    "name": "Opposition_Ring",
+    "description": "This is the Opposition_Ring gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.6459912061691284,
+        "y": -0.6377425193786621,
+        "z": -0.32019051909446719,
+        "w": 0.2710312306880951
+    },
+    "rightHandRotation": {
+        "x": 0.23096314072608949,
+        "y": 0.44595885276794436,
+        "z": -0.5751804113388062,
+        "w": 0.64571213722229
+    }
+}{
+    "name": "Opposition_Ring",
+    "description": "This is the Opposition_Ring gesture and has been completed 2 time(s)!",
+    "hasDone": "true",
+    "count": 2,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.0,
+        "y": 0.7071068286895752,
+        "z": 0.0,
+        "w": 0.7071068286895752
+    }
+}{
+    "name": "Opposition_Middle",
+    "description": "This is the Opposition_Middle gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.0,
+        "y": 0.7071068286895752,
+        "z": 0.0,
+        "w": 0.7071068286895752
+    }
+}{
+    "name": "Thumb_Extension",
+    "description": "This is the Thumb_Extension gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.8042029142379761,
+        "y": -0.091331347823143,
+        "z": -0.5537259578704834,
+        "w": 0.19571368396282197
+    },
+    "rightHandRotation": {
+        "x": 0.26318004727363589,
+        "y": 0.23457646369934083,
+        "z": -0.6243342161178589,
+        "w": 0.6970774531364441
+    }
+}{
+    "name": "Opposition_Middle",
+    "description": "This is the Opposition_Middle gesture and has been completed 2 time(s)!",
+    "hasDone": "true",
+    "count": 2,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.7064118981361389,
+        "y": 0.007045090664178133,
+        "z": -0.2528500556945801,
+        "w": 0.6610594391822815
+    }
+}{
+    "name": "Opposition_Pinky",
+    "description": "This is the Opposition_Pinky gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.7064118981361389,
+        "y": 0.007045090664178133,
+        "z": -0.2528500556945801,
+        "w": 0.6610594391822815
+    }
+}{
+    "name": "HoekVuist_Neutral",
+    "description": "This is the HoekVuist_Neutral gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.36170119047164919,
+        "y": 0.5923735499382019,
+        "z": 0.3439861536026001,
+        "w": -0.6324076652526856
+    },
+    "rightHandRotation": {
+        "x": -0.2968316376209259,
+        "y": -0.5066593289375305,
+        "z": 0.5680899620056152,
+        "w": -0.5765945315361023
+    }
+}{
+    "name": "HaakVuist",
+    "description": "This is the HaakVuist gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.738983690738678,
+        "y": -0.1323217749595642,
+        "z": -0.5106250643730164,
+        "w": 0.4191136062145233
+    },
+    "rightHandRotation": {
+        "x": 0.4788515567779541,
+        "y": 0.2529474198818207,
+        "z": -0.584748387336731,
+        "w": 0.6039769649505615
+    }
+}{
+    "name": "PaperPose",
+    "description": "This is the PaperPose gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.750186026096344,
+        "y": -0.1361142247915268,
+        "z": -0.4958327114582062,
+        "w": 0.4157448410987854
+    },
+    "rightHandRotation": {
+        "x": 0.5404232740402222,
+        "y": 0.27233242988586428,
+        "z": -0.4918249547481537,
+        "w": 0.6260079741477966
+    }
+}{
+    "name": "PaperPose",
+    "description": "This is the PaperPose gesture and has been completed 2 time(s)!",
+    "hasDone": "true",
+    "count": 2,
+    "leftHandRotation": {
+        "x": -0.7390257120132446,
+        "y": -0.08816010504961014,
+        "z": -0.4981166124343872,
+        "w": 0.44491422176361086
+    },
+    "rightHandRotation": {
+        "x": 0.2623250484466553,
+        "y": 0.561359703540802,
+        "z": -0.32736361026763918,
+        "w": 0.7133679986000061
+    }
+}{
+    "name": "Opposition_Middle",
+    "description": "This is the Opposition_Middle gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": -0.4317859411239624,
+        "y": -0.4740369915962219,
+        "z": 0.5834408402442932,
+        "w": -0.49844425916671755
+    }
+}{
+    "name": "Opposition_Pinky",
+    "description": "This is the Opposition_Pinky gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": -0.4317859411239624,
+        "y": -0.4740369915962219,
+        "z": 0.5834408402442932,
+        "w": -0.49844425916671755
+    }
+}{
+    "name": "Opposition_Index",
+    "description": "This is the Opposition_Index gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.6949112415313721,
+        "y": 0.4491691589355469,
+        "z": -0.4114125967025757,
+        "w": 0.382210910320282
+    }
+}{
+    "name": "HoekVuist_Neutral",
+    "description": "This is the HoekVuist_Neutral gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.6949112415313721,
+        "y": 0.4491691589355469,
+        "z": -0.4114125967025757,
+        "w": 0.382210910320282
+    }
+}{
+    "name": "Opposition_Index",
+    "description": "This is the Opposition_Index gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.42469295859336855,
+        "y": 0.39597341418266299,
+        "z": -0.5175482630729675,
+        "w": 0.6284781098365784
+    }
+}{
+    "name": "Thumb_Extension",
+    "description": "This is the Thumb_Extension gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": -0.09528366476297379,
+        "y": 0.7153840661048889,
+        "z": -0.5672569870948792,
+        "w": 0.3966940939426422
+    }
+}{
+    "name": "Opposition_Pinky",
+    "description": "This is the Opposition_Pinky gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": 0.7071068286895752,
+        "y": 3.090862321641907e-8,
+        "z": 0.7071068286895752,
+        "w": -3.090862321641907e-8
+    },
+    "rightHandRotation": {
+        "x": 0.34587374329566958,
+        "y": 0.41431543231010439,
+        "z": -0.45566800236701968,
+        "w": 0.707870602607727
+    }
+}{
+    "name": "Opposition_Pinky",
+    "description": "This is the Opposition_Pinky gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.7183356881141663,
+        "y": -0.15833137929439546,
+        "z": -0.6121265292167664,
+        "w": 0.29021742939949038
+    },
+    "rightHandRotation": {
+        "x": 0.40639981627464297,
+        "y": 0.49825382232666018,
+        "z": -0.5130484700202942,
+        "w": 0.5686507225036621
+    }
+}{
+    "name": "Opposition_Ring",
+    "description": "This is the Opposition_Ring gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.4813793897628784,
+        "y": -0.6223721504211426,
+        "z": -0.5359882712364197,
+        "w": 0.30601203441619875
+    },
+    "rightHandRotation": {
+        "x": -0.12391597032546997,
+        "y": -0.5093057155609131,
+        "z": 0.07742850482463837,
+        "w": -0.848090410232544
+    }
+}{
+    "name": "Opposition_Middle",
+    "description": "This is the Opposition_Middle gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.45316359400749209,
+        "y": -0.6301130652427673,
+        "z": -0.5586853623390198,
+        "w": 0.2923543155193329
+    },
+    "rightHandRotation": {
+        "x": -0.10367638617753983,
+        "y": -0.49587857723236086,
+        "z": 0.09576163440942764,
+        "w": -0.8568461537361145
+    }
+}{
+    "name": "HoekVuist_Neutral",
+    "description": "This is the HoekVuist_Neutral gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.49208274483680727,
+        "y": -0.645080029964447,
+        "z": -0.45700857043266299,
+        "w": 0.36451271176338198
+    },
+    "rightHandRotation": {
+        "x": -0.1038464829325676,
+        "y": -0.4981042146682739,
+        "z": 0.09595993906259537,
+        "w": -0.855511486530304
+    }
+}{
+    "name": "PaperPose",
+    "description": "This is the PaperPose gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.764405369758606,
+        "y": -0.23779603838920594,
+        "z": -0.5989298820495606,
+        "w": 0.02050638198852539
+    },
+    "rightHandRotation": {
+        "x": -0.10854092240333557,
+        "y": -0.4960820972919464,
+        "z": 0.0953543484210968,
+        "w": -0.8561710715293884
+    }
+}{
+    "name": "Opposition_Index",
+    "description": "This is the Opposition_Index gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.46506479382514956,
+        "y": -0.6506742238998413,
+        "z": -0.37501659989356997,
+        "w": 0.46872207522392275
+    },
+    "rightHandRotation": {
+        "x": -0.13060018420219422,
+        "y": -0.5061283707618713,
+        "z": 0.08411471545696259,
+        "w": -0.8483527302742004
+    }
+}{
+    "name": "Opposition_Pinky",
+    "description": "This is the Opposition_Pinky gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.4614660441875458,
+        "y": -0.712619423866272,
+        "z": -0.3110353648662567,
+        "w": 0.4271763563156128
+    },
+    "rightHandRotation": {
+        "x": -0.1416066735982895,
+        "y": -0.5128931999206543,
+        "z": 0.08910038322210312,
+        "w": -0.8419913053512573
+    }
+}{
+    "name": "HoekVuist_Neutral",
+    "description": "This is the HoekVuist_Neutral gesture and has been completed 1 time(s)!",
+    "hasDone": "true",
+    "count": 1,
+    "leftHandRotation": {
+        "x": -0.5403631329536438,
+        "y": -0.294100821018219,
+        "z": -0.4603596031665802,
+        "w": 0.6399856209754944
+    },
+    "rightHandRotation": {
+        "x": 0.08263102918863297,
+        "y": 0.5645237565040588,
+        "z": -0.694680392742157,
+        "w": 0.43806877732276919
+    }
 }

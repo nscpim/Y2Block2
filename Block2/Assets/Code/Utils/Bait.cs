@@ -5,43 +5,28 @@ using UnityEngine;
 public class Bait : MonoBehaviour
 {
     public bool canCatch;
-    private Timer fishCatchDuration;
-        
+
+
     // Start is called before the first frame update
     void Start()
     {
-        fishCatchDuration = new Timer();
-    }
 
+    }
     // Update is called once per frame
-    void Update()
+   public void Update()
     {
-             
+       
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.transform.CompareTag("Water"))
+        if (other.GetComponent<Collider>().CompareTag("Fish"))
         {
             canCatch = true;
-           
-        }
-        if (collision.collider.transform.CompareTag("Fish") && canCatch)
-        {
-            fishCatchDuration.SetTimer(5f);
-            //Show Which hand Gesture user must performs
-            //Update the UI aswell
-
-            if (fishCatchDuration.TimerDone() && fishCatchDuration.isActive)
-            {
-                collision.gameObject.GetComponent<Fish>().CatchFish();
-
-            }
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.collider.transform.CompareTag("Water"))
+        if (other.gameObject.CompareTag("Fish"))
         {
             canCatch = false;
         }
