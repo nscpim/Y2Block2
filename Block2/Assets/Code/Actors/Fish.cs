@@ -6,15 +6,15 @@ using TMPro;
 
 public class Fish : MonoBehaviour
 {
-    public Transform[] targets;
     public bool isMoving = false;
     public float speed = 5f;
     private Transform newTarget;
-    public Animator animator;
+    public Animation anim;
     // Start is called before the first frame update
     public void Start()
     {
-
+        GameManager.instance.fish = gameObject;
+        anim = gameObject.GetComponent<Animation>();       
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class Fish : MonoBehaviour
     {
         if (!isMoving)
         {
-            newTarget = targets[Random.Range(0, targets.Length)];
+            newTarget = GameManager.instance.targets[Random.Range(0, GameManager.instance.targets.Length)];
             isMoving = true;
         }
         transform.position = Vector3.MoveTowards(transform.position, newTarget.position, speed * Time.deltaTime);
@@ -41,9 +41,12 @@ public class Fish : MonoBehaviour
 
     public void Caught() 
     {
-    
-    
+        anim.Play();
+        Destroy(gameObject, 0.5f); 
+        GameManager.instance.SpawnFish();
     }
+
+
 
 
 

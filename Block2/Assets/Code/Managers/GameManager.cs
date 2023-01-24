@@ -11,11 +11,12 @@ using Oculus.Interaction.PoseDetection;
 public class GameManager : MonoBehaviour
 {
     public Animator fishAnimator;
-    public TextMeshProUGUI fishCaughtText, didCaughtText;
+    public TextMeshProUGUI fishCaughtText, didCaughtText, handSelectText;
     public int[] timesCompleted;
     private static Manager[] managers;
     public Gesture gestureDone;
     public Sprite[] gestureImages;
+    public Animator gestureHand;
     public Canvas gestureUI;
     public TextMeshProUGUI gestureText;
     public Image gestureImage;
@@ -27,7 +28,9 @@ public class GameManager : MonoBehaviour
     public OVRHand[] hands;
     public GameObject[] handSelect;
     public GameObject bait;
-   
+    public Transform[] targets;
+    public GameObject fish;
+    public GameObject fishPrefab;
 
 
     public static GameManager instance { get; private set; }
@@ -99,6 +102,38 @@ public class GameManager : MonoBehaviour
     {
         gesture = UnityEngine.Random.Range(0, Enum.GetNames(typeof(GestureEnum)).Length);
         gestureImage.sprite = gestureImages[gesture];
+        switch (gesture)
+        {
+            case 0:
+                gestureHand.Play("HoekVuist_Neutral");
+                break;
+            case 1:
+                gestureHand.Play("HoekVuist_Closed");
+                break;
+            case 2:
+                gestureHand.Play("HaakVuist");
+                break;
+            case 3:
+                gestureHand.Play("Opposition_Index");
+                break;
+            case 4:
+                gestureHand.Play("Opposition_All");
+                break;
+            case 5:
+                gestureHand.Play("Opposition_All");
+                break;
+            case 6:
+                gestureHand.Play("Opposition_Pinky");
+                break;
+            case 7:
+                gestureHand.Play("PaperPose");
+                break;
+            case 8:
+                gestureHand.Play("Thumb_Extension");
+                break;
+            default:
+                break;
+        }
         GestureEnum enumValue = (GestureEnum)gesture;
         gestureText.text = enumValue.ToString();
     }
@@ -114,7 +149,7 @@ public class GameManager : MonoBehaviour
                 didCaughtText.text = "You caught a fish!";
                 timesCompleted[gestureInt]++;
                 SaveJSONData((GestureEnum)gestureInt);
-                fishAnimator.Play("play");
+                fish.GetComponent<Fish>().Caught();
             }
             else
             {
@@ -122,7 +157,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
+
     public void SaveJSONData(GestureEnum gesture)
     {
         Data data = new Data();
@@ -135,7 +170,6 @@ public class GameManager : MonoBehaviour
         string json = JsonUtility.ToJson(data, true);
         File.AppendAllText(Application.dataPath + "/Tasks.json", json);
         AddCount(1);
-       
         RandomizeGesture();
     }
 
@@ -174,9 +208,16 @@ public class GameManager : MonoBehaviour
             Debug.Log("Chose right as hand.");
         }
         handCheckPanel.SetActive(false);
+        handSelectText.gameObject.SetActive(false);
         for (int i = 0; i < handSelect.Length; i++)
         {
             handSelect[i].SetActive(false);
         }
     }
+
+    public void SpawnFish()
+    {
+        GameObject.Instantiate(fishPrefab, fishPrefab.transform.position, fishPrefab.transform.rotation);
+    }
+
 }
