@@ -6,10 +6,15 @@ using TMPro;
 
 public class Fish : MonoBehaviour
 {
+    //Bool if the fish is moving
     public bool isMoving = false;
+    //Speed of the fish
     public float speed = 5f;
+    //Current Target Location
     private Transform newTarget;
+    //Animator of the fish
     public Animation anim;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -22,6 +27,9 @@ public class Fish : MonoBehaviour
     {
         Move();
     }
+    /// <summary>
+    /// Movement code for the fish
+    /// </summary>
     public void Move()
     {
         if (!isMoving)
@@ -38,7 +46,9 @@ public class Fish : MonoBehaviour
             isMoving = false;
         }
     }
-
+    /// <summary>
+    /// Method for when a fish is caught
+    /// </summary>
     public void Caught() 
     {
         anim.Play();

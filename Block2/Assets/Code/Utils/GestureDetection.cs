@@ -19,7 +19,7 @@ public struct Data
 [System.Serializable]
 public struct Gesture
 {
-
+    //DATA STRUCT NO LONGER IN USE.
     public string name;
     public List<Vector3> fingerDatas;
     public UnityEvent onRecognized;
@@ -30,6 +30,8 @@ public struct Gesture
 
 public class GestureDetection : MonoBehaviour
 {
+
+    //CLASS NO LONGER BEING USED, RIP MY CODE.
 
     public List<float> pinchStrengthsLeft = new List<float>();
     public List<float> pinchStrengthsRight = new List<float>();
@@ -70,6 +72,10 @@ public class GestureDetection : MonoBehaviour
 
         }
     }
+
+    /// <summary>
+    /// Saving data to a JSON File
+    /// </summary>
     public void SaveData()
     {
         Gesture g = new Gesture();
@@ -83,6 +89,10 @@ public class GestureDetection : MonoBehaviour
         gestures.Add(g);
     }
 
+    /// <summary>
+    /// Randomize the gesture
+    /// </summary>
+    /// <returns></returns>
     public Gesture GetRandomGesture()
     {
         Gesture[] gestureArray = gestures.ToArray();
@@ -90,6 +100,10 @@ public class GestureDetection : MonoBehaviour
         return gestureArray[randomGesture];
     }
 
+    /// <summary>
+    /// Recognizes the gesture by an offset, this is in the update loop
+    /// </summary>
+    /// <returns></returns>
     Gesture Recognize()
     {
         Gesture currentGesture = new Gesture();
@@ -127,6 +141,10 @@ public class GestureDetection : MonoBehaviour
         return currentGesture;
     }
 
+    /// <summary>
+    /// Saving the data to a json file
+    /// </summary>
+    /// <param name="gesture"></param>
     public void SaveJSONData(Gesture gesture)
     {
         Data data = new Data();

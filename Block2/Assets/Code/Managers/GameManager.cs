@@ -1,39 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
 using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.IO;
-using Oculus.Interaction.PoseDetection;
 
 
 public class GameManager : MonoBehaviour
 {
-    public Animator fishAnimator;
+    //public Animator fishAnimator;
+
+    //Text Objects
     public TextMeshProUGUI fishCaughtText, didCaughtText, handSelectText;
+    //Array of ints for every gesture, keeps track of how many times a gesture has been completed
     public int[] timesCompleted;
+    //Holds all of the managers
     private static Manager[] managers;
     public Gesture gestureDone;
+    //Array of all the images of the gestures
     public Sprite[] gestureImages;
+    //Animator of the hand doing the gestures
     public Animator gestureHand;
+    //UI World space canvas for the gesture part
     public Canvas gestureUI;
+    //Text being used to show which gesture has to be done
     public TextMeshProUGUI gestureText;
+    //Image thats being used to set the gesture images
     public Image gestureImage;
+    //Gesture int for randomizing gestures
     public int gesture;
+    //int for showing the amount of total fish caught
     private int fishCaught = 0;
+    //Left Hand Gestures Array to enable if the user wants to use the left hand
     public GameObject[] leftHandPoses;
+    //Right Hand Gestures Array to enable if the user wants to use the right hand
     public GameObject[] rightHandPoses;
+    //Panel object for the selection of the hand
     public GameObject handCheckPanel;
+    //OVRHand array for getting hand data
     public OVRHand[] hands;
+    //Object for selecting the hand the user wants to use
     public GameObject[] handSelect;
+    //Area in the water that gets checked for fish
     public GameObject bait;
+    //Objects the fish can swim to
     public Transform[] targets;
+    //Current fish object in the scene
     public GameObject fish;
+    //Fish prefab for respawning the fish
     public GameObject fishPrefab;
 
-
+    //singletone instance of the gamemanager
     public static GameManager instance { get; private set; }
+
+    /// <summary>
+    /// Method to get a certain Manager
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     public static T GetManager<T>() where T : Manager
     {
         for (int i = 0; i < managers.Length; i++)
@@ -45,6 +68,9 @@ public class GameManager : MonoBehaviour
         }
         return default(T);
     }
+    /// <summary>
+    /// GameManager Constructor for initalizing
+    /// </summary>
     GameManager()
     {
         instance = this;
@@ -53,7 +79,9 @@ public class GameManager : MonoBehaviour
            new AudioManager(),
         };
     }
-
+    /// <summary>
+    /// Awake, gets called before start
+    /// </summary>
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -64,6 +92,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Start gets called before update
+    /// </summary>
     private void Start()
     {
         for (int i = 0; i < managers.Length; i++)
@@ -74,6 +105,9 @@ public class GameManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// GameLoop
+    /// </summary>
     // Update is called once per frame
     void Update()
     {
@@ -98,6 +132,9 @@ public class GameManager : MonoBehaviour
         Thumb_Extension
     }
 
+    /// <summary>
+    /// Method for randomizing the gesture the user must do and playing the right animation.
+    /// </summary>
     public void RandomizeGesture()
     {
         gesture = UnityEngine.Random.Range(0, Enum.GetNames(typeof(GestureEnum)).Length);
@@ -138,7 +175,11 @@ public class GameManager : MonoBehaviour
         gestureText.text = enumValue.ToString();
     }
 
-
+    /// <summary>
+    /// Method that gets called from the Event Wrapper when a gesture is detected
+    /// Detects if its the right gesture and if it is the right one saves it to a json file
+    /// </summary>
+    /// <param name="gestureInt"></param>
     public void DetectGesture(int gestureInt)
     {
         if (gestureInt == gesture)
@@ -158,6 +199,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// JSON File saving, fills in the correct data based on the gesture and appends to the existing files ore creates a new file if it doesnt exist.
+    /// </summary>
+    /// <param name="gesture"></param>
     public void SaveJSONData(GestureEnum gesture)
     {
         Data data = new Data();
@@ -173,22 +218,38 @@ public class GameManager : MonoBehaviour
         RandomizeGesture();
     }
 
+    /// <summary>
+    /// Adds a amount of fishcaught
+    /// </summary>
+    /// <param name="amount"></param>
     public void AddCount(int amount)
     {
         fishCaught += amount;
         fishCaughtText.text = "Vis gevangen: " + fishCaught.ToString();
     }
 
+    /// <summary>
+    /// Obescure code
+    /// </summary>
+    /// <param name="gesture"></param>
     public void SetCurrentGesture(Gesture gesture)
     {
         gestureDone = gesture;
     }
 
+    /// <summary>
+    /// Obsecure Code
+    /// </summary>
+    /// <returns></returns>
     public Gesture GetGestureDone()
     {
         return gestureDone;
     }
 
+    /// <summary>
+    /// Selection Method for the hands.
+    /// </summary>
+    /// <param name="isLeft"></param>
     public void LeftHandSelect(bool isLeft)
     {
         if (isLeft)
@@ -215,6 +276,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method for spawning a new fish
+    /// </summary>
     public void SpawnFish()
     {
         GameObject.Instantiate(fishPrefab, fishPrefab.transform.position, fishPrefab.transform.rotation);
