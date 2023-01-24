@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.385
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.21150392, g: 0.30625162, b: 0.37479007, a: 0.385}
+  m_IndirectSpecularColor: {r: 0.21287674, g: 0.30734625, b: 0.36813828, a: 0.385}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3758,14 +3758,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.9017857, y: -0.052678574, z: -0.2943396, w: 0.31204456}
+  m_LocalRotation: {x: 0.8985319, y: -0.055699695, z: -0.29378393, w: 0.3212927}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 32.126, y: -138.267, z: -160.786}
+  m_LocalEulerAnglesHint: {x: 33.001, y: -137.764, z: -159.852}
 --- !u!114 &705507996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4563,11 +4563,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7599653225683203549, guid: 1b905665d958eb9408f6d5e48792554e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f13d37933a4247f49ad185707967b3c9, type: 2}
+    - target: {fileID: -5998023534404815477, guid: 1b905665d958eb9408f6d5e48792554e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f13d37933a4247f49ad185707967b3c9, type: 2}
     - target: {fileID: -742613200995398186, guid: 1b905665d958eb9408f6d5e48792554e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f7f76174695d83944a2d60d02fe11888, type: 2}
+    - target: {fileID: -85744201872177665, guid: 1b905665d958eb9408f6d5e48792554e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9203941eb96ddbe4b9b8284d9c66518a, type: 2}
     - target: {fileID: 867474969226940840, guid: 1b905665d958eb9408f6d5e48792554e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4578,6 +4593,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden_Cabin(2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6781412436368133575, guid: 1b905665d958eb9408f6d5e48792554e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f13d37933a4247f49ad185707967b3c9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b905665d958eb9408f6d5e48792554e, type: 3}
 --- !u!1001 &976173004
